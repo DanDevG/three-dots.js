@@ -1,0 +1,82 @@
+// header
+header {
+	position: relative;
+	width: 100%;
+	height: 70px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: $primary-color;
+	z-index: 50;
+	
+	h1 {
+		display: none;
+	}
+	
+	.logo {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 70px;
+		background: url("../images/logo.svg") no-repeat center center scroll;
+		background-size: 150px 60px;
+		z-index: 1;
+		
+		h2 {
+			display: none;
+		}
+	}
+	
+	.tooltip {
+		position: absolute;
+		top: 80px;
+		padding: 10px;
+		background-color: $primary-color;
+		width: 300px;
+		color: #fff;
+		font-size: 14px;
+		text-align: center;
+		box-shadow: 0 2px 10px rgba(0,0,0,.5);
+		display: none;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: -20px;
+			transform: translateX(-50%);
+			border-width: 10px;
+			border-style: solid;
+			border-color: transparent transparent $primary-color transparent;
+		}
+	}
+	
+	&.active {
+		
+		.tooltip {
+			display: inline-block;
+			animation: show-tooltip .5s forwards ease-in-out;
+		}
+	}
+}
+
+@keyframes show-tooltip {
+	0% { 
+		display: none;
+		opacity: 0;
+		top: 120px;
+	}
+	
+	1% { 
+		display: inline-block;
+		opacity: 0;
+	}
+	
+	100% { 
+		display: inline-block;
+		opacity: 1;
+		top: 80px;
+	}
+}

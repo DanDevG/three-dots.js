@@ -1,0 +1,19 @@
+// examples
+.examples {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.brick-inner {
+	padding: 20px;
+	background-color: rgba(240,255,240,1);
+	box-shadow: 0 0 1px 0px rgba(232,232,232,.21);
+	border: 1px solid #f1f1f3;
+	box-shadow: 0 0 1px 0px rgba(232,232,232,.21);
+	transition: all .35s ease-in-out;
+	font-size: 16px;
+	
+	&:hover {
+		box-shadow: 0px 3px 28.42px 0.58px rgba(112, 112, 112, 0.49);
+	}
+}

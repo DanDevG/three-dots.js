@@ -1,0 +1,137 @@
+// grid
+* {
+	box-sizing: border-box;
+}
+
+.container-fluid {
+	width: 100%;
+	padding: 0 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	
+	.brick {
+		display: flex;
+		flex-grow: 0;
+		flex-shrink: 0;
+		margin-bottom: 10px;
+		width: 100%;
+		height: 200px;
+		
+		.brick-inner {
+			flex-grow: 1;
+		}
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	
+	@media (min-width: 481px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		
+		.brick {
+			width: 50%;
+			padding-left: 5px;
+			padding-right: 5px;
+			
+			&:nth-of-type(odd) {
+				padding-left: 0;
+			}
+			
+			&:nth-of-type(even) {
+				padding-right: 0;
+			}
+			
+			&:last-of-type {
+				margin-bottom: 10px;
+			}
+		}
+	}
+	
+	@media (min-width: 993px) {
+		
+		.brick {
+			width: 33.33333333%;
+			padding-left: 5px;
+			padding-right: 5px;
+			
+			&:nth-of-type(2) {
+				width: 66.6666666666%;
+				padding-right: 0;
+			}
+			
+			&:nth-of-type(3n) {
+				width: 66.6666666666%;
+				padding-left: 0;
+			}
+			
+			&:nth-of-type(7) {
+				width: 66.6666666666%;
+				padding-left: 0;
+			}
+			
+			&:nth-of-type(6n) {
+				padding-left: 5px;
+				padding-right: 0;
+			}
+			
+			&:nth-of-type(9) {
+				width: 33.3333333333%;
+				padding-left: 0;
+			}
+			
+			&:nth-of-type(10) {
+				width: 66.6666666666%;
+				padding-right: 0;
+			}
+		}
+	}
+	
+	@media (min-width: 1300px) {
+		
+		.brick:nth-of-type(odd), .brick:nth-of-type(even) {
+			width: 20%;
+			padding-left: 5px;
+			padding-right: 5px;
+			
+			&:nth-of-type(1) {
+				width: 40%;
+				padding-left: 0;
+			}
+			
+			&:nth-of-type(3) {
+				width: 40%;
+				padding-right: 0;
+			}
+			
+			&:nth-of-type(4) {
+				padding-left: 0;
+			}
+			
+			&:nth-of-type(5) {
+				width: 50%;
+			}
+			
+			&:nth-of-type(6) {
+				width: 30%;
+				padding-right: 0;
+			}
+			
+			&:nth-of-type(7) {
+				width: 40%;
+				padding-left: 0;
+			}
+			
+			&:nth-of-type(9) {
+				width: 40%;
+				padding-right: 0;
+			}
+			
+			&:nth-of-type(10) {
+				display: none;
+			}
+		}
+	}
+}

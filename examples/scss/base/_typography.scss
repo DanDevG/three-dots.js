@@ -1,0 +1,18 @@
+body {
+	background-color: $bg-color;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	
+	h2 {
+		margin: 40px 0;
+		padding: 0 10px;
+		font-family: 'Caveat Brush', cursive;
+		font-size: 70px;
+		text-align: center;
+		
+		@media (max-width: 340px) {
+			font-size: 50px;
+		}
+	}
+}

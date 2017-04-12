@@ -1,0 +1,25 @@
+// links
+a.link {
+	position: relative;
+	color: $link-color;
+	text-decoration: none;
+	
+	&:before {
+		content: "";
+		width: 0;
+		height: 2px;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		background-color: #D35400;
+		transition: all .35s ease-in-out;
+	}
+	
+	&:hover {
+	
+		&:before {
+			width: 100%;
+			left: 0;
+		}
+	}
+}
