@@ -1,0 +1,20 @@
+{
+  "name": "three-dots.js",
+  "description": "The plugin handles the situations when some text overflows the container inside of which it is located",
+  "main": "three-dots.js",
+  "authors": [
+    "Dan Dev <dan.dev.mail@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/DanDevG/three-dots.js/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "examples",
+    "README.md",
+    "*.log",
+    ".*",
+    "LICENSE.md"
+  ]
+}
