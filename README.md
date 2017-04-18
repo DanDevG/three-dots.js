@@ -1,6 +1,6 @@
 #three-dots.js
 
-easy to use ellipsis plugin with no dependencies
+An easy to use and fast ellipsis plugin with no dependencies
 
 ##Introducing
 This plugin handles the situations when the text overflows its container. three-dots.js truncates the text and adds ellipsis at the end to indicate
