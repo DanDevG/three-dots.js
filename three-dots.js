@@ -1,6 +1,6 @@
 /*!
 
-three-dots.js v0.0.1
+three-dots.js v0.0.2
 
 Copyright (c) 2017 Dan Dev
 
@@ -74,10 +74,6 @@ https://github.com/DanDevG/three-dots-js/master/LICENSE.md
 	function isOverflowed(el){
 	    return el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth;
 	}
-	
-	RegExp.escape = function(s) {
-	    return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-	};
 	
 	function createHelpersContainer() {
 		var newNode = document.createElement("div");
