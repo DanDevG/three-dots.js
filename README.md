@@ -1,18 +1,18 @@
-#three-dots.js
+# three-dots.js
 
 An easy to use and fast ellipsis plugin with no dependencies
 
-##Introducing
+## Introducing
 This plugin handles the situations when the text overflows its container. three-dots.js truncates the text and adds ellipsis at the end to indicate
 that there is more text than it is currently visible.
 When the size of a window is changing, the plugin adjusts the text inside the container on the fly, so that your site always has the best look!
 To see the plugin in action visit this [showcase](http://threedots.surge.sh)
 
-##Dependencies
+## Dependencies
 
 No dependencies
 
-##Installing
+## Installing
 You can download three-dots.js manually to you project or you can install with npm:
 
 ```shell
@@ -29,7 +29,7 @@ bower install three-dots.js
 
 ```
 
-##Usage
+## Usage
 
 First of all, you'll want to link the three-dots.js or three-dots.min.js file to your web-page:
 
@@ -68,6 +68,7 @@ threeDots("three-dots-container");
 
 You've done it! Enjoy of your page with neat ellipsed containers.
 
-##License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/DanDevG/three-dots.js/blob/master/LICENSE.md) file for details
+Enjoy!
