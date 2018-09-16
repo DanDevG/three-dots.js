@@ -71,4 +71,3 @@ You've done it! Enjoy of your page with neat ellipsed containers.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/DanDevG/three-dots.js/blob/master/LICENSE.md) file for details
-Enjoy!
