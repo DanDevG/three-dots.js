@@ -66,6 +66,28 @@ threeDots("three-dots-container");
 
 ```
 
+## Adding of a "Read more" link after the text
+
+To tell the plugin to add a "Read more" link to the end of your text you can just add the link into your container (after the main text)
+
+```html
+<div class="three-dots-container">
+	
+	//some text inside the container
+	
+	<a href="some-url.html" class="some classes if you wish">Read more (or any other text)</a>
+	
+</div>
+```
+
+and call the threeDots function with the second argument, wich should be *true* (or any other non-empty value):
+
+```javascript
+
+threeDots("three-dots-container", true);
+
+```
+
 You've done it! Enjoy of your page with neat ellipsed containers.
 
 ## License
