@@ -408,40 +408,39 @@ template {
 .container-fluid {
   width: 100%;
   padding: 0 10px;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
   .container-fluid .brick {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-flex: 0;
-        -ms-flex-positive: 0;
-            flex-grow: 0;
+    -ms-flex-positive: 0;
+        flex-grow: 0;
     -ms-flex-negative: 0;
         flex-shrink: 0;
     margin-bottom: 10px;
     width: 100%;
     height: 200px; }
+    .container-fluid .brick.large-brick {
+      width: 100% !important;
+      height: auto;
+      max-width: 800px !important;
+      margin-left: auto;
+      margin-right: auto; }
+      .container-fluid .brick.large-brick .brick-inner {
+        padding: 35px; }
     .container-fluid .brick .brick-inner {
-      -webkit-box-flex: 1;
-          -ms-flex-positive: 1;
-              flex-grow: 1; }
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
     .container-fluid .brick:last-of-type {
       margin-bottom: 0; }
   @media (min-width: 481px) {
     .container-fluid {
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
       .container-fluid .brick {
@@ -531,7 +530,6 @@ a.link {
     bottom: 0;
     left: 50%;
     background-color: #D35400;
-    -webkit-transition: all .35s ease-in-out;
     transition: all .35s ease-in-out; }
   a.link:hover:before {
     width: 100%;
@@ -555,7 +553,6 @@ a.link {
   box-shadow: 0 0 1px 0px rgba(232, 232, 232, 0.21);
   border: 1px solid #f1f1f3;
   box-shadow: 0 0 1px 0px rgba(232, 232, 232, 0.21);
-  -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
   font-size: 16px; }
   .brick-inner:hover {
@@ -565,16 +562,12 @@ header {
   position: relative;
   width: 100%;
   height: 70px;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
   background-color: #2D2C32;
   z-index: 50; }
   header h1 {
@@ -607,28 +600,13 @@ header {
       position: absolute;
       left: 50%;
       top: -20px;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
+      transform: translateX(-50%);
       border-width: 10px;
       border-style: solid;
       border-color: transparent transparent #2D2C32 transparent; }
   header.active .tooltip {
     display: inline-block;
-    -webkit-animation: show-tooltip .5s forwards ease-in-out;
-            animation: show-tooltip .5s forwards ease-in-out; }
-
-@-webkit-keyframes show-tooltip {
-  0% {
-    display: none;
-    opacity: 0;
-    top: 120px; }
-  1% {
-    display: inline-block;
-    opacity: 0; }
-  100% {
-    display: inline-block;
-    opacity: 1;
-    top: 80px; } }
+    animation: show-tooltip .5s forwards ease-in-out; }
 
 @keyframes show-tooltip {
   0% {

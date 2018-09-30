@@ -1,5 +1,9 @@
 window.onload = function() {
-	threeDots("brick-inner");
+	var re = /\bindex\-page\b/;
+	
+	if (document.getElementsByTagName("body")[0].className.match(re)) {
+		threeDots("brick-inner", true);
+	}
 	
 	document.getElementsByTagName("header")[0].addEventListener("mouseenter", function(event) {
 		this.setAttribute("class", "active");

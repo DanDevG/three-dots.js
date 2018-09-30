@@ -18,6 +18,18 @@
 		width: 100%;
 		height: 200px;
 		
+		&.large-brick {
+			width: 100% !important;
+			height: auto;
+			max-width: 800px !important;
+			margin-left: auto;
+			margin-right: auto;
+			
+			.brick-inner {
+				padding: 35px;
+			}
+		}
+		
 		.brick-inner {
 			flex-grow: 1;
 		}

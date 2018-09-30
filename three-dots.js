@@ -1,6 +1,6 @@
 /*!
 
-three-dots.js v0.0.2
+three-dots.js v0.0.3
 
 Copyright (c) 2017 Dan Dev
 
@@ -10,9 +10,9 @@ https://github.com/DanDevG/three-dots-js/master/LICENSE.md
 */
 
 (function() {
-	this.threeDots = function(els) {
+	this.threeDots = function(els, handleLinks) {
 		window.onresize = function() {
-			threeDots(els);
+			threeDots(els, handleLinks);
 		};
 		
 		var nodes = document.getElementsByClassName(els);
@@ -40,15 +40,41 @@ https://github.com/DanDevG/three-dots-js/master/LICENSE.md
 				}
 			}
 			
+			// if threeDotsHelpers container for this node has been created already
 			if (classIndex !== -1) {
-				nodes[i].innerHTML = document.getElementsByClassName(className + String(num))[1].innerHTML;
+				// just copy text from needed helper container into the node
+				nodes[i].innerHTML = document.getElementById("threeDotsHelpersContainer")
+												.querySelector("." + className + String(num))
+												.querySelector(".text-container").innerHTML;
 			} else {
+				// create a helper container for the node and copy the node's text and "Read more" link (if it exists) into the helper container
 				var newClass = className + String(nodesHelpers.length + 1);
 				nodesHelpers = document.getElementsByClassName("threeDotsHelpers");
 				var newNode = document.createElement("p");
+				
+				if (handleLinks) {
+					var link = nodes[i].querySelector("a");
+					
+					if (link) {
+						link = link.cloneNode(true);
+						popLink(nodes[i]);
+					}
+				}
+				
+				var innerTextNode = document.createElement("span");
+				innerTextNode.setAttribute("class", "text-container");
 				var textNode = document.createTextNode(nodes[i].innerHTML);
-				newNode.appendChild(textNode);
+				innerTextNode.appendChild(textNode);
+				newNode.appendChild(innerTextNode);
+				
+				if (handleLinks) {
+					if (link) {
+						newNode.appendChild(link);
+					}
+				}
+				
 				newNode.setAttribute("class", "threeDotsHelpers " + newClass);
+				
 				helpersContainer.appendChild(newNode);
 				
 				nodes[i].setAttribute("class", className + " " + newClass);
@@ -58,14 +84,32 @@ https://github.com/DanDevG/three-dots-js/master/LICENSE.md
 		for (var i = 0; i < numOfNodes; i++) {
 			
 			if (isOverflowed(nodes[i])) {
+				if (handleLinks) {
+					popLink(nodes[i]);
+				}
+				
 				var sHeight = nodes[i].scrollHeight;
 				var cHeight = nodes[i].clientHeight;
 				var pointOfTruncating = nodes[i].innerHTML.slice(0, parseInt(nodes[i].innerHTML.length * (cHeight / sHeight)));
 				
-				nodes[i].innerHTML = pointOfTruncating;
+				nodes[i].innerHTML = pointOfTruncating + "&hellip; ";
+				
+				if (handleLinks) {
+					appendLink(nodes[i], className, i);
+				}
+				
+				// console.log(nodes[i]);
 				
 				while (isOverflowed(nodes[i])) {
-					nodes[i].innerHTML = nodes[i].textContent.slice(0, -3) + "&hellip;";
+					if (handleLinks) {
+						popLink(nodes[i]);
+					}
+					
+					nodes[i].innerHTML = nodes[i].textContent.slice(0, -3) + "&hellip; ";
+					
+					if (handleLinks) {
+						appendLink(nodes[i], className, i);
+					}
 				}
 			}
 		}
@@ -82,5 +126,22 @@ https://github.com/DanDevG/three-dots-js/master/LICENSE.md
 		document.body.appendChild(newNode);
 		
 		return document.getElementById("threeDotsHelpersContainer");
+	}
+	
+	function appendLink(node, className, i) {
+		var link = document.getElementById("threeDotsHelpersContainer")
+												.querySelector("." + className + String(i + 1))
+												.querySelector("a");
+		
+		if (link) {
+			link = link.cloneNode(true);
+			node.appendChild(link);
+		}
+	}
+	
+	function popLink(node) {
+		while(node.lastChild && node.lastChild.nodeType !== Node.TEXT_NODE) {
+		    node.removeChild(node.lastChild);
+		}
 	}
 }());
