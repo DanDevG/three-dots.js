@@ -2,6 +2,7 @@
   "name": "three-dots.js",
   "description": "The plugin handles the situations when some text overflows the container inside of which it is located",
   "main": "three-dots.js",
+  "version": "0.0.5",
   "authors": [
     "Dan Dev <dan.dev.mail@gmail.com>"
   ],
